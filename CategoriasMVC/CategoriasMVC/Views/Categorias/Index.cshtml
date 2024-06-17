@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CategoriasMVC.Models.CategoriaViewModel>
+
+<h2>Categorias</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="pull-left">
+                <a asp-action="CirarNovaCategoria" class="btn btn-primary">
+                    <span title="Criar Categoria" class="fas fa-plus"></span> Nova Categoria
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="panel panel-default">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.ImagemUrl)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(ModelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(ModelItem => item.ImagemUrl)
+                    </td>
+                    <td>
+                        <a asp-action="AtualizarCategoria" asp-route-id="@item.CategoriaId" title="Editar" class="btn btn-primary">
+                            <span class="fas fa-edit"></span>
+                        </a>
+                        <a asp-action="Deletar" asp-route-id="@item.CategoriaId" title="Deletar" class="btn btn-primary">
+                            <span class="fas fa-trash-alt"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,4 +1,5 @@
 ﻿using CategoriasMVC.Models;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace CategoriasMVC.Services.Interfaces
 {
@@ -8,6 +9,6 @@ namespace CategoriasMVC.Services.Interfaces
         Task<CategoriaViewModel> GetCategoriaPorId(int id);
         Task<CategoriaViewModel> CriarCategoria(CategoriaViewModel categoriaVM);
         Task<bool> AtualizarCategoria(int id, CategoriaViewModel categoriaVM);
-        Task<bool> DeletarCategoria();
+        Task<bool> DeletarCategoria(int id);
     }
 }

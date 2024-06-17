@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddHttpClient("CategoriaApi", c => {
+builder.Services.AddHttpClient("CategoriasApi", c =>
+{
     c.BaseAddress = new Uri(builder.Configuration["ServiceUri:CategoriasApi"]);
 });
 
