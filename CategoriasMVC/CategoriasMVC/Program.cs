@@ -1,7 +1,16 @@
+using CategoriasMVC.Services;
+using CategoriasMVC.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient("CategoriaApi", c => {
+    c.BaseAddress = new Uri(builder.Configuration["ServiceUri:CategoriasApi"]);
+});
+
+builder.Services.AddScoped<ICategoriaServices, CategoriaService>();
 
 var app = builder.Build();
 
