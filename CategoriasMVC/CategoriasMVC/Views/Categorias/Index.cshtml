@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div>
             <div class="pull-left">
-                <a asp-action="CirarNovaCategoria" class="btn btn-primary">
+                <a asp-action="CriarNovaCategoria" class="btn btn-primary">
                     <span title="Criar Categoria" class="fas fa-plus"></span> Nova Categoria
                 </a>
             </div>
@@ -20,28 +20,29 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(Model => Model.Nome)
+                    @Html.DisplayNameFor(model => model.Nome)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(Model => Model.ImagemUrl)
+                    @Html.DisplayNameFor(model => model.ImagemUrl)
                 </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(ModelItem => item.Nome)
+                        @Html.DisplayFor(modelItem => item.Nome)
                     </td>
                     <td>
-                        @Html.DisplayFor(ModelItem => item.ImagemUrl)
+                        @Html.DisplayFor(modelItem => item.ImagemUrl)
                     </td>
                     <td>
-                        <a asp-action="AtualizarCategoria" asp-route-id="@item.CategoriaId" title="Editar" class="btn btn-primary">
+                        <a asp-action="AtualizarCategoria" asp-route-id="@item.CategoriaId" title="Editar" class="btn btn-warning">
                             <span class="fas fa-edit"></span>
                         </a>
-                        <a asp-action="Deletar" asp-route-id="@item.CategoriaId" title="Deletar" class="btn btn-primary">
+                        <a asp-action="DeletarCategoria" asp-route-id="@item.CategoriaId" title="Deletar" class="btn btn-danger">
                             <span class="fas fa-trash-alt"></span>
                         </a>
                     </td>
