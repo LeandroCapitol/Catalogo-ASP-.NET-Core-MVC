@@ -1,13 +1,13 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CategoriasMVC.Controllers
+namespace CategoriasMvc.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
             return View();
         }
-
     }
 }
